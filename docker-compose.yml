@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+#backend
+server:
+   biuld: ./server
+   container_name: server
+   ports: 
+   - "3001:3001"
+   environment: 
+   - mongodb+srv://nbsnarahari:Ds6xcjJ0rO6pXSyp@cluster0.gpinard.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+   #Frontend 
+   client:
+     build: ./client
+     container_name: client
+     ports:
+     - "3000:80"
